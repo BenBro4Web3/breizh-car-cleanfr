@@ -1,49 +1,76 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Volume2, VolumeX } from 'lucide-react';
 
-import hero1 from '@/assets/hero-1.jpg';
-import hero2 from '@/assets/hero-2.jpg';
-import hero3 from '@/assets/hero-3.jpg';
-
-const slides = [
-  { image: hero1, alt: 'Intérieur Mercedes luxueux' },
-  { image: hero2, alt: 'Voiture noire après lavage premium' },
-  { image: hero3, alt: 'Service de nettoyage professionnel' },
+const videos = [
+  { src: '/videos/hero-video-1.mp4', alt: 'Nettoyage intérieur professionnel' },
+  { src: '/videos/hero-video-2.mp4', alt: 'Résultat nettoyage automobile' },
 ];
 
 export const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
+      setCurrentSlide((prev) => (prev + 1) % videos.length);
+    }, 10000);
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    videoRefs.current.forEach((video, index) => {
+      if (video) {
+        if (index === currentSlide) {
+          video.currentTime = 0;
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      }
+    });
+  }, [currentSlide]);
+
   const goToSlide = (index: number) => setCurrentSlide(index);
-  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
-  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % videos.length);
+  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + videos.length) % videos.length);
+
+  const handleWhatsAppClick = () => {
+    window.open('https://wa.me/33784542082', '_blank', 'noopener,noreferrer');
+  };
 
   return (
     <section id="accueil" className="relative h-screen min-h-[600px] overflow-hidden">
-      {/* Background Slides */}
-      {slides.map((slide, index) => (
+      {/* Background Videos */}
+      {videos.map((video, index) => (
         <div
           key={index}
           className={`absolute inset-0 transition-opacity duration-1000 ${
             index === currentSlide ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          <img
-            src={slide.image}
-            alt={slide.alt}
+          <video
+            ref={(el) => (videoRefs.current[index] = el)}
+            src={video.src}
+            muted={isMuted}
+            loop
+            playsInline
             className="w-full h-full object-cover"
+            aria-label={video.alt}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background/80" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background/90" />
         </div>
       ))}
+
+      {/* Mute/Unmute Button */}
+      <button
+        onClick={() => setIsMuted(!isMuted)}
+        className="absolute top-24 right-4 z-20 w-10 h-10 rounded-full bg-foreground/10 backdrop-blur-sm border border-foreground/20 flex items-center justify-center text-foreground hover:bg-foreground/20 transition-all"
+        aria-label={isMuted ? 'Activer le son' : 'Couper le son'}
+      >
+        {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
+      </button>
 
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
@@ -57,10 +84,8 @@ export const Hero = () => {
           Nettoyage automobile professionnel à domicile en Bretagne
         </p>
         <div className="flex flex-col sm:flex-row gap-4 animate-fade-up stagger-2 opacity-0">
-          <Button variant="hero" asChild>
-            <a href="https://wa.me/33784542082" target="_blank" rel="noopener noreferrer">
-              Réserver maintenant
-            </a>
+          <Button variant="hero" onClick={handleWhatsAppClick}>
+            Réserver maintenant
           </Button>
           <Button variant="heroOutline" asChild>
             <a href="#tarifs">Voir les tarifs</a>
@@ -86,7 +111,7 @@ export const Hero = () => {
 
       {/* Dots */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
-        {slides.map((_, index) => (
+        {videos.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
