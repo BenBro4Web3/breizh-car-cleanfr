@@ -1,6 +1,6 @@
 # Breizh Car Clean
 
-Professional car detailing service website built with Lovable.
+Professional car detailing service website built with React + Vite, deployed on OVH.
 
 ## Project Overview
 
@@ -55,43 +55,50 @@ npm run lint         # Run ESLint
 
 ## Editing Your Website
 
-### Option 1: Using Lovable (Recommended)
+### Option 1: Local IDE (Recommended)
 
-Visit [Lovable](https://lovable.dev) and open your project. Changes are auto-committed to GitHub.
+Clone this repo, make changes locally, and push to GitHub. Changes will auto-deploy to OVH.
 
-### Option 2: Local IDE
-
-Clone this repo, make changes locally, and push to GitHub. Changes sync automatically with Lovable.
-
-### Option 3: GitHub Web Editor
+### Option 2: GitHub Web Editor
 
 - Navigate to any file
 - Click the edit (pencil) icon
 - Commit your changes
+- Deployment triggers automatically
 
-### Option 4: GitHub Codespaces
+### Option 3: GitHub Codespaces
 
 - Click "Code" → "Codespaces" → "New codespace"
 - Edit files and commit changes
+- Push to trigger deployment
 
 ## Deployment
 
-Your website is automatically deployed with Lovable Pro. 
+Your website is automatically deployed to OVH hosting via GitHub Actions.
 
 ### How It Works
 
-1. **Lovable Hosting** - Built-in deployment at https://breizh-car-clean.fr/
-2. Changes push to GitHub → Auto-deployed within minutes
-3. No additional CI/CD setup needed
+1. **Push to GitHub** - Commit and push changes to the `main` branch
+2. **Automatic Build** - GitHub Actions builds the project automatically
+3. **Deploy to OVH** - Built files are deployed to your OVH server via SFTP
+4. **Live in Minutes** - Changes are live at https://breizh-car-clean.fr/
 
-### Custom Domain
+### Deployment Configuration
 
-Your custom domain `breizh-car-clean.fr` is already connected via Lovable.
+The deployment is handled by [.github/workflows/deploy-ovh.yml](.github/workflows/deploy-ovh.yml).
 
-To manage domain settings:
-1. Open [Lovable Dashboard](https://lovable.dev)
-2. Project Settings → Domains
-3. View or modify domain configuration
+**Required GitHub Secrets** (already configured):
+- `OVH_SSH_HOST` - SSH server (ssh.cluster031.hosting.ovh.net)
+- `OVH_SSH_USER` - SSH username (agenccs)
+- `OVH_SSH_KEY` - Private SSH key for authentication
+- `OVH_REMOTE_PATH` - Remote directory (/home/agenccs/agenccs/breizhcarclean)
+
+### Manual Deployment
+
+You can trigger a manual deployment from GitHub:
+1. Go to the "Actions" tab in your repository
+2. Select "Deploy to OVH" workflow
+3. Click "Run workflow"
 
 ## Project Structure
 
@@ -127,46 +134,6 @@ src/
 - ✅ Pricing table
 - ✅ Google Reviews integration
 
-## Support
-
-For Lovable features and documentation, visit [docs.lovable.dev](https://docs.lovable.dev)
-
 ---
 
 **Last Updated**: December 29, 2025
-
-const interiorPrices = [
-{
-title: 'INTÉRIEUR EXPRESS',
-price: '35€',
-features: ['Aspiration Tapis et Moquettes', 'Nettoyage Plastiques'],
-popular: false,
-},
-{
-title: 'INTÉRIEUR PREMIUM',
-price: '60€',
-features: [
-'Aspiration Tapis et Moquettes',
-'Nettoyage Plastiques',
-'Nettoyage des Vitres',
-'Nettoyage Contour des Portes',
-'Nettoyage du Coffre',
-],
-popular: true,
-},
-{
-title: 'INTÉRIEUR PRESTIGE',
-price: '90€',
-features: [
-'Aspiration Tapis et Moquettes',
-'Nettoyage Plastiques',
-'Nettoyage des Vitres',
-'Nettoyage Contour des Portes',
-'Nettoyage du Coffre',
-'Rénovation Plastiques et Cuirs',
-'Nettoyage des Joints de Portes',
-'Nettoyage Vapeur',
-],
-popular: false,
-},
-];
