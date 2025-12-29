@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import { ChevronLeft, ChevronRight, Volume2, VolumeX } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const videos = [
   { src: '/videos/hero-video-1.mp4', alt: 'Nettoyage intérieur professionnel' },
@@ -9,7 +9,6 @@ const videos = [
 
 export const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isMuted, setIsMuted] = useState(true);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   useEffect(() => {
@@ -53,7 +52,7 @@ export const Hero = () => {
           <video
             ref={(el) => (videoRefs.current[index] = el)}
             src={video.src}
-            muted={isMuted}
+            muted
             loop
             playsInline
             className="w-full h-full object-cover"
@@ -62,15 +61,6 @@ export const Hero = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background/90" />
         </div>
       ))}
-
-      {/* Mute/Unmute Button */}
-      <button
-        onClick={() => setIsMuted(!isMuted)}
-        className="absolute top-24 right-4 z-20 w-10 h-10 rounded-full bg-foreground/10 backdrop-blur-sm border border-foreground/20 flex items-center justify-center text-foreground hover:bg-foreground/20 transition-all"
-        aria-label={isMuted ? 'Activer le son' : 'Couper le son'}
-      >
-        {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
-      </button>
 
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
