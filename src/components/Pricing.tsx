@@ -13,7 +13,8 @@ const interiorPrices = [
     title: 'INTÉRIEUR PREMIUM',
     price: '60€',
     features: [
-      'Intérieur Express +',
+      'Aspiration Tapis et Moquettes',
+      'Nettoyage Plastiques',
       'Nettoyage des Vitres',
       'Nettoyage Contour des Portes',
       'Nettoyage du Coffre',
@@ -24,7 +25,11 @@ const interiorPrices = [
     title: 'INTÉRIEUR PRESTIGE',
     price: '90€',
     features: [
-      'Intérieur Premium +',
+      'Aspiration Tapis et Moquettes',
+      'Nettoyage Plastiques',
+      'Nettoyage des Vitres',
+      'Nettoyage Contour des Portes',
+      'Nettoyage du Coffre',
       'Rénovation Plastiques et Cuirs',
       'Nettoyage des Joints de Portes',
       'Nettoyage Vapeur',

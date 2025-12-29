@@ -134,3 +134,39 @@ For Lovable features and documentation, visit [docs.lovable.dev](https://docs.lo
 ---
 
 **Last Updated**: December 29, 2025
+
+const interiorPrices = [
+{
+title: 'INTÉRIEUR EXPRESS',
+price: '35€',
+features: ['Aspiration Tapis et Moquettes', 'Nettoyage Plastiques'],
+popular: false,
+},
+{
+title: 'INTÉRIEUR PREMIUM',
+price: '60€',
+features: [
+'Aspiration Tapis et Moquettes',
+'Nettoyage Plastiques',
+'Nettoyage des Vitres',
+'Nettoyage Contour des Portes',
+'Nettoyage du Coffre',
+],
+popular: true,
+},
+{
+title: 'INTÉRIEUR PRESTIGE',
+price: '90€',
+features: [
+'Aspiration Tapis et Moquettes',
+'Nettoyage Plastiques',
+'Nettoyage des Vitres',
+'Nettoyage Contour des Portes',
+'Nettoyage du Coffre',
+'Rénovation Plastiques et Cuirs',
+'Nettoyage des Joints de Portes',
+'Nettoyage Vapeur',
+],
+popular: false,
+},
+];
