@@ -1,5 +1,18 @@
 import { useEffect } from 'react';
 
+// Declare global window type for Elfsight
+declare global {
+  interface Window {
+    elfsight?: {
+      platform: {
+        Core: {
+          load: () => void;
+        };
+      };
+    };
+  }
+}
+
 export const GoogleReviews = () => {
   useEffect(() => {
     // Charger le script Elfsight
