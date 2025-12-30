@@ -6,7 +6,7 @@ import about2 from '@/assets/about-2.jpeg';
 
 const features = [
   { icon: MapPin, text: 'Service à domicile dans toute la Bretagne' },
-  { icon: Award, text: 'Équipement professionnel Kärcher' },
+  { icon: Award, text: 'Équipement professionnel haute pression' },
   { icon: Sparkles, text: 'Produits de qualité premium' },
   { icon: Eye, text: 'Attention aux détails' },
 ];
