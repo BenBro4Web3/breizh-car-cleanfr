@@ -7,13 +7,15 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 // 1. Télécharge ta vidéo dans le dossier /public/videos/ via FileZilla
 // 2. Ajoute une nouvelle ligne ci-dessous avec le nom de ta vidéo
 // Exemple: { src: '/videos/hero-video-3.mp4', alt: 'Description de la vidéo' },
+// ⚠️ IMPORTANT: Utilise le format .mp4 pour une meilleure compatibilité web
+//    Les .mov peuvent ne pas fonctionner sur tous les navigateurs (Android/Chrome)
 const videos = [
   { src: '/videos/hero-video-1.mp4', alt: 'Nettoyage intérieur professionnel' },
   { src: '/videos/hero-video-2.mp4', alt: 'Résultat nettoyage automobile' },
-  // Ajoute tes nouvelles vidéos ici 👇
-  // { src: '/videos/hero-video-3.mp4', alt: 'Description vidéo 3' },
-  // { src: '/videos/hero-video-4.mp4', alt: 'Description vidéo 4' },
-  // { src: '/videos/hero-video-5.mp4', alt: 'Description vidéo 5' },
+  // Vidéos ajoutées (temporairement en .mov - à convertir en .mp4)
+  { src: '/videos/hero-video-3.mov', alt: 'intérieur' },
+  { src: '/videos/hero-video-4.mov', alt: 'latérale clean' },
+  { src: '/videos/hero-video-5.mov', alt: 'Coffre propre' },
 ];
 
 export const Hero = () => {
@@ -66,6 +68,11 @@ export const Hero = () => {
             playsInline
             className="w-full h-full object-cover"
             aria-label={video.alt}
+            onError={(e) => {
+              console.error(`Erreur de chargement vidéo: ${video.src}`);
+              // La vidéo ne peut pas être lue, on masque juste l'erreur
+              e.currentTarget.style.display = 'none';
+            }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background/90" />
         </div>
