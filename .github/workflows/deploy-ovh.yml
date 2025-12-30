@@ -26,16 +26,18 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy to OVH via SFTP
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-        with:
-          username: ${{ secrets.OVH_SSH_USER }}
-          server: ${{ secrets.OVH_SSH_HOST }}
-          ssh_private_key: ${{ secrets.OVH_SSH_KEY }}
-          local_path: './dist/*'
-          remote_path: ${{ secrets.OVH_REMOTE_PATH }}
-          sftp_only: true
-          args: '-o ConnectTimeout=5'
+      - name: Setup SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.OVH_SSH_KEY_BASE64 }}" | base64 -d > ~/.ssh/ovh_key
+          chmod 600 ~/.ssh/ovh_key
+          ssh-keyscan -H ${{ secrets.OVH_SSH_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Deploy to OVH via rsync
+        run: |
+          rsync -avz --delete -e "ssh -i ~/.ssh/ovh_key -o StrictHostKeyChecking=no" \
+            ./dist/ \
+            ${{ secrets.OVH_SSH_USER }}@${{ secrets.OVH_SSH_HOST }}:${{ secrets.OVH_REMOTE_PATH }}/
 
       - name: Deployment success
         run: |
