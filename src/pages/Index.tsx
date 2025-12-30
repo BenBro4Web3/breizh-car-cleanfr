@@ -8,6 +8,7 @@ import { CustomQuote } from '@/components/CustomQuote';
 import { GoogleReviews } from '@/components/GoogleReviews';
 import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
+import { WhatsAppButton } from '@/components/WhatsAppButton';
 
 const Index = () => {
   return (
@@ -22,6 +23,7 @@ const Index = () => {
       <GoogleReviews />
       <Contact />
       <Footer />
+      <WhatsAppButton />
     </main>
   );
 };
