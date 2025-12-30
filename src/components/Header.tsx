@@ -33,7 +33,7 @@ export const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="#accueil" className="flex items-center gap-2">
-            <img src="/src/assets/logo.jpg" alt="Breizh Car Clean" className="w-12 h-12 rounded-full object-cover" />
+            <img src="/logo.jpg" alt="Breizh Car Clean" className="w-12 h-12 rounded-full object-cover" />
           </a>
 
           {/* Desktop Navigation */}
