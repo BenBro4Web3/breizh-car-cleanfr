@@ -33,13 +33,20 @@ jobs:
           chmod 600 ~/.ssh/ovh_key
           ssh-keyscan -H ${{ secrets.OVH_SSH_HOST }} >> ~/.ssh/known_hosts
 
-      - name: Deploy to OVH via rsync
+      - name: Deploy built files to OVH via rsync
         run: |
           rsync -avz --delete -e "ssh -i ~/.ssh/ovh_key -o StrictHostKeyChecking=no" \
             ./dist/ \
             ${{ secrets.OVH_SSH_USER }}@${{ secrets.OVH_SSH_HOST }}:${{ secrets.OVH_REMOTE_PATH }}/
 
+      - name: Deploy videos to OVH
+        run: |
+          rsync -avz -e "ssh -i ~/.ssh/ovh_key -o StrictHostKeyChecking=no" \
+            ./public/videos/ \
+            ${{ secrets.OVH_SSH_USER }}@${{ secrets.OVH_SSH_HOST }}:${{ secrets.OVH_REMOTE_PATH }}/videos/
+
       - name: Deployment success
         run: |
           echo "✅ Deployment completed successfully!"
+          echo "📹 Videos synced from public/videos/"
           echo "🌐 Site should be live at: https://breizh-car-clean.fr"
