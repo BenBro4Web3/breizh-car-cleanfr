@@ -2,9 +2,18 @@ import { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
+// 📹 VIDÉOS DU CARROUSEL HERO
+// Pour ajouter une nouvelle vidéo:
+// 1. Télécharge ta vidéo dans le dossier /public/videos/ via FileZilla
+// 2. Ajoute une nouvelle ligne ci-dessous avec le nom de ta vidéo
+// Exemple: { src: '/videos/hero-video-3.mp4', alt: 'Description de la vidéo' },
 const videos = [
   { src: '/videos/hero-video-1.mp4', alt: 'Nettoyage intérieur professionnel' },
   { src: '/videos/hero-video-2.mp4', alt: 'Résultat nettoyage automobile' },
+  // Ajoute tes nouvelles vidéos ici 👇
+  // { src: '/videos/hero-video-3.mp4', alt: 'Description vidéo 3' },
+  // { src: '/videos/hero-video-4.mp4', alt: 'Description vidéo 4' },
+  // { src: '/videos/hero-video-5.mp4', alt: 'Description vidéo 5' },
 ];
 
 export const Hero = () => {
