@@ -33,10 +33,7 @@ export const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="#accueil" className="flex items-center gap-2">
-            <div className="w-12 h-12 bg-primary rounded-lg flex flex-col items-center justify-center py-1">
-              <span className="text-primary-foreground font-bold text-[9px] leading-tight">BREIZH</span>
-              <span className="text-primary-foreground font-bold text-[9px] leading-tight">CAR</span>
-            </div>
+            <img src="/src/assets/logo.jpg" alt="Breizh Car Clean" className="w-12 h-12 rounded-full object-cover" />
           </a>
 
           {/* Desktop Navigation */}

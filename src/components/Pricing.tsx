@@ -49,6 +49,8 @@ const exteriorPrices = [
     title: 'EXTÉRIEUR PREMIUM',
     price: '45€',
     features: [
+      'Lavage carrosserie',
+      'Rinçage',
       'Extérieur Express +',
       'Nettoyage Jantes',
       'Nettoyage Vitres',
@@ -60,7 +62,12 @@ const exteriorPrices = [
     title: 'EXTÉRIEUR PRESTIGE',
     price: '80€',
     features: [
-      'Extérieur Premium +',
+      'Lavage carrosserie',
+      'Rinçage',
+      'Extérieur Express +',
+      'Nettoyage Jantes',
+      'Nettoyage Vitres',
+      'Cire brillante',
       'Décontamination',
       'Polish carrosserie',
       'Traitement céramique',
