@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(where:*)",
+      "Bash(convert:*)",
+      "Skill(commit)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push)",
+      "Bash(dir \"%USERPROFILE%\\\\.claude*\" /a /s)",
+      "Bash(findstr:*)"
+    ]
+  }
+}
