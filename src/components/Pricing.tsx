@@ -59,7 +59,7 @@ const exteriorPrices = [
   },
   {
     title: 'EXTÉRIEUR PRESTIGE',
-    price: '80€',
+    price: '70€',
     features: [
       'Lavage carrosserie',
       'Rinçage',
