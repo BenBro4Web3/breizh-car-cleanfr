@@ -51,7 +51,6 @@ const exteriorPrices = [
     features: [
       'Lavage carrosserie',
       'Rinçage',
-      'Extérieur Express +',
       'Nettoyage Jantes',
       'Nettoyage Vitres',
       'Cire brillante',
@@ -64,7 +63,6 @@ const exteriorPrices = [
     features: [
       'Lavage carrosserie',
       'Rinçage',
-      'Extérieur Express +',
       'Nettoyage Jantes',
       'Nettoyage Vitres',
       'Cire brillante',
