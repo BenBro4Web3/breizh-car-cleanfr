@@ -19,7 +19,7 @@ const interiorPrices = [
       'Nettoyage Contour des Portes',
       'Nettoyage du Coffre',
     ],
-    popular: true,
+    popular: false,
   },
   {
     title: 'INTÉRIEUR PRESTIGE',
@@ -34,7 +34,7 @@ const interiorPrices = [
       'Nettoyage des Joints de Portes',
       'Nettoyage Vapeur',
     ],
-    popular: false,
+    popular: true,
   },
 ];
 
@@ -55,7 +55,7 @@ const exteriorPrices = [
       'Nettoyage Vitres',
       'Cire brillante',
     ],
-    popular: true,
+    popular: false,
   },
   {
     title: 'EXTÉRIEUR PRESTIGE',
@@ -70,7 +70,7 @@ const exteriorPrices = [
       'Polish carrosserie',
       'Traitement céramique',
     ],
-    popular: false,
+    popular: true,
   },
 ];
 
