@@ -41,7 +41,7 @@ const interiorPrices = [
 const exteriorPrices = [
   {
     title: 'EXTÉRIEUR EXPRESS',
-    price: '25€',
+    price: '30€',
     features: ['Lavage carrosserie', 'Rinçage'],
     popular: false,
   },
