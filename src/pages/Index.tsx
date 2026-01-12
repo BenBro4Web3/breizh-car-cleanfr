@@ -6,6 +6,7 @@ import { Gallery } from '@/components/Gallery';
 import { Pricing } from '@/components/Pricing';
 import { CustomQuote } from '@/components/CustomQuote';
 import { GoogleReviews } from '@/components/GoogleReviews';
+import { InstagramFeed } from '@/components/InstagramFeed';
 import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
@@ -21,6 +22,7 @@ const Index = () => {
       <Pricing />
       <CustomQuote />
       <GoogleReviews />
+      <InstagramFeed />
       <Contact />
       <Footer />
       <WhatsAppButton />
