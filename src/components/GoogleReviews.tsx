@@ -2,40 +2,34 @@ import { Star } from 'lucide-react';
 
 const reviews = [
   {
-    name: 'Thomas L.',
+    name: 'Maxime',
     rating: 5,
-    text: 'Excellent service ! Ma voiture n\'a jamais été aussi propre. Je recommande vivement Breizh Car Clean.',
-    date: 'Il y a 2 semaines',
+    text: 'Maxime est très sérieux, pro, sympathique et arrangeant.',
+    date: 'Récemment',
   },
   {
-    name: 'Marie D.',
+    name: 'Julie G.',
     rating: 5,
-    text: 'Très professionnel, ponctuel et travail impeccable. Le service à domicile est vraiment pratique.',
-    date: 'Il y a 1 mois',
+    text: 'Excellent travail, ma voiture est comme neuve. Je recommande vivement !',
+    date: 'Récemment',
   },
   {
-    name: 'Pierre M.',
+    name: 'Jen S.',
     rating: 5,
-    text: 'Super prestation ! L\'intérieur de ma voiture est comme neuf. Rapport qualité/prix imbattable.',
-    date: 'Il y a 1 mois',
+    text: 'Service impeccable et ponctuel. Le nettoyage intérieur est impressionnant.',
+    date: 'Récemment',
   },
   {
-    name: 'Sophie B.',
+    name: 'Brad C.',
     rating: 5,
-    text: 'Je suis bluffée par le résultat. Mon véhicule a retrouvé son éclat d\'origine. Merci !',
-    date: 'Il y a 2 mois',
+    text: 'Très professionnel, rapport qualité/prix imbattable sur le secteur.',
+    date: 'Récemment',
   },
   {
-    name: 'Jean-Luc R.',
+    name: 'Amanda W.',
     rating: 5,
-    text: 'Travail soigné et méticuleux. Je recommande les yeux fermés pour le detailing complet.',
-    date: 'Il y a 3 mois',
-  },
-  {
-    name: 'Camille V.',
-    rating: 5,
-    text: 'Service impeccable du début à la fin. Très satisfaite de la prestation Prestige !',
-    date: 'Il y a 3 mois',
+    text: 'Ma voiture avait besoin d\'un gros rafraîchissement, le résultat est bluffant. Merci !',
+    date: 'Récemment',
   },
 ];
 
