@@ -79,8 +79,28 @@ export const Gallery = () => {
         )}
 
         {activeTab === 'videos' && (
-          <div className="text-center py-20">
-            <p className="text-muted-foreground">Vidéos à venir bientôt...</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { src: '/videos/gallery-video-1.mp4', alt: 'Nettoyage véhicule 1' },
+              { src: '/videos/gallery-video-2.mp4', alt: 'Nettoyage véhicule 2' },
+              { src: '/videos/gallery-video-3.mp4', alt: 'Nettoyage véhicule 3' },
+            ].map((video, index) => (
+              <div
+                key={index}
+                className="relative overflow-hidden rounded-xl bg-muted"
+              >
+                <video
+                  src={video.src}
+                  className="w-full aspect-video object-cover"
+                  controls
+                  playsInline
+                  muted
+                  preload="metadata"
+                >
+                  Votre navigateur ne supporte pas la lecture vidéo.
+                </video>
+              </div>
+            ))}
           </div>
         )}
 
