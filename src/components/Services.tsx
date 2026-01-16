@@ -1,4 +1,4 @@
-import { Car, Sparkles, Star, Home } from 'lucide-react';
+import { Car, Sparkles, Home } from 'lucide-react';
 
 const services = [
   {
@@ -10,11 +10,6 @@ const services = [
     icon: Sparkles,
     title: 'Nettoyage Extérieur',
     description: 'Lavage à la main, jantes, décontamination, cire brillante pour une carrosserie éclatante.',
-  },
-  {
-    icon: Star,
-    title: 'Prestations Premium',
-    description: 'Nettoyage vapeur, rénovation cuir, traitement céramique pour une protection longue durée.',
   },
   {
     icon: Home,
@@ -36,7 +31,7 @@ export const Services = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-4xl mx-auto">
           {services.map((service, index) => (
             <div
               key={index}
