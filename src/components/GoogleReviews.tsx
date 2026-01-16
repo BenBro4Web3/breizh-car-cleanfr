@@ -70,7 +70,7 @@ export const GoogleReviews = () => {
         {/* Google Reviews Link */}
         <div className="text-center mt-8">
           <a
-            href="https://g.page/r/CbIiqSlJLF1kEAE/review"
+            href="https://www.google.com/maps/search/Breizh+Car+Clean,+18+Rue+du+G%C3%A9n%C3%A9ral+de+Gaulle,+35140+Saint-Aubin-du-Cormier/@48.1166939,-1.7507593,15z?hl=fr"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"
