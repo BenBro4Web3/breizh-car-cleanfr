@@ -14,9 +14,15 @@ declare global {
 
 export const InstagramFeed = () => {
   useEffect(() => {
+    // Check if script already loaded
+    const existingScript = document.querySelector('script[src="https://static.elfsight.com/platform/platform.js"]');
+    if (existingScript) return;
+
     const script = document.createElement('script');
-    script.src = 'https://elfsightcdn.com/platform.js';
+    script.src = 'https://static.elfsight.com/platform/platform.js';
     script.async = true;
+    script.crossOrigin = 'anonymous';
+    script.referrerPolicy = 'no-referrer';
     document.body.appendChild(script);
 
     const handleScriptLoad = () => {
